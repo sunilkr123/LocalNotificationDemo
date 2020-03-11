@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,96 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocalNotificationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnx-ag-cyN" customClass="ShadowView" customModule="LocalNotificationDemo" customModuleProvider="target">
+                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f1U-c0-mCL">
+                                        <rect key="frame" x="30" y="45" width="240" height="210"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alw-wl-3nk">
+                                                <rect key="frame" x="70" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Bay-zR-oyf"/>
+                                                    <constraint firstAttribute="height" constant="100" id="pzx-rC-uqu"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="dateIcon"/>
+                                                <connections>
+                                                    <action selector="onDateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1cg-wW-ZM4"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-EA-xhB">
+                                                <rect key="frame" x="0.0" y="110" width="240" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrd-1o-2HY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="Vhr-oF-tg0"/>
+                                                            <constraint firstAttribute="width" constant="100" id="xcV-ur-Qz5"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="locationIcon"/>
+                                                        <connections>
+                                                            <action selector="onLocationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rul-cD-1wt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fF-x7-xe3">
+                                                        <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="abN-O0-An8"/>
+                                                            <constraint firstAttribute="height" constant="100" id="rSO-ix-m9K"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="timerIcon"/>
+                                                        <connections>
+                                                            <action selector="onTimerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unL-TE-sW3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1BA-eb-mPA"/>
+                                    <constraint firstAttribute="width" constant="300" id="AJW-nS-6PC"/>
+                                    <constraint firstItem="f1U-c0-mCL" firstAttribute="centerX" secondItem="nnx-ag-cyN" secondAttribute="centerX" id="FdL-V0-gjn"/>
+                                    <constraint firstItem="f1U-c0-mCL" firstAttribute="centerY" secondItem="nnx-ag-cyN" secondAttribute="centerY" id="KJl-IH-fE9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Notification based on time, Date, and Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh9-im-qvp">
+                                <rect key="frame" x="20" y="49" width="280" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mB5-lO-tOV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nnx-ag-cyN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="28r-aF-gXj"/>
+                            <constraint firstItem="f1U-c0-mCL" firstAttribute="top" secondItem="Bh9-im-qvp" secondAttribute="bottom" constant="70" id="AP7-Ug-Kxo"/>
+                            <constraint firstAttribute="trailing" secondItem="Bh9-im-qvp" secondAttribute="trailing" constant="20" id="BoJ-4V-kdV"/>
+                            <constraint firstItem="Bh9-im-qvp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="LgT-KM-MOe"/>
+                            <constraint firstItem="nnx-ag-cyN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vzy-OE-Cr7"/>
+                            <constraint firstItem="Bh9-im-qvp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wn4-Xg-nM9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="142.5" y="-26.408450704225352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dateIcon" width="100" height="100"/>
+        <image name="locationIcon" width="100" height="100"/>
+        <image name="timerIcon" width="100" height="100"/>
+    </resources>
 </document>
