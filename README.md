@@ -1,4 +1,5 @@
 ## Local Notification Demo
+DownLoad the project and use it
 ## Timer
 <img src="https://github.com/sunilkr123/LocalNotificationDemo/blob/master/Attachment/Timer.gif" width="300" height="600">
 
